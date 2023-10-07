@@ -2,8 +2,10 @@ provider "aws" {
     region = "ap-northeast-2"
 }
 
+# 외부에 있는 데이터를 가져오기 위한 타입
 data "aws_caller_identity" "current" {}
 
+# output은 출력하기 위한 타입
 output "account_id" {
   value = data.aws_caller_identity.current.account_id
 }
